@@ -1,4 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    clear: both;
+    box-sizing: border-box;
+}
+
+:root {
+    --blck: hsl(276, 14%, 7%);
+    --whte: hsl(240, 20%, 99%);
+    --prple: hsl(270, 50%, 40%);
+    --ddsprple: hsl(270, 30%, 15%);
+    --ldsprple: hsl(270, 64%, 75%);
+    --bl: hsl(199, 82%, 61%);
+
+    --jacob: #38FCC8;
+    --sam: #F5F5DC;
+    --brian: #F4CB2A;
+    --chris: #1E286E;
+
+    --dblue: hsl(233, 57%, 17%);
+}
+
+html {
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome and the rest */
+}
+
 body {
-    background-color: black;
-    color: white;
+    background-color: var(--blck);
+    color: var(--whte);
+}
+
+a {
+    text-decoration: none;
+    color: var(--bl);
+    transition: 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--prple);
+    color: var(--whte);
+    font-size: 2rem;
+    padding: 4rem 0;
+    text-align:center;
+    font-weight: 800;
 }
