@@ -1,0 +1,41 @@
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-items: center;
+    gap: 1rem;
+}
+
+#pre-chris-grid {
+    column-count: 3;
+
+}
+
+#post-chris-grid {
+    column-count: 4;
+}
+
+
+
+.film-card {
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.card-poster {
+    max-width: 100%;
+    height: auto;
+}
+
+.date {
+    max-width: 50%;
+}
+
+.choice-of {
+    max-width: 50%;
+}
+
+.card-text {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
