@@ -1,4 +1,4 @@
-fetch("https://sheetdb.io/api/v1/gtq7w6uzj647w?sheet=movies")
+fetch("https://norm-of-the-server.onrender.com/api/1RmEm4aUEjW4ewi1vYQeY1qUcf3YPanxe6dZbAlRhwto/movies")
   .then(res => res.json())
   .then(data => {
     const preChrisGrid = document.getElementById("pre-chris-grid");
@@ -68,7 +68,7 @@ fetch("https://sheetdb.io/api/v1/gtq7w6uzj647w?sheet=movies")
     }
   })
 
-fetch("https://sheetdb.io/api/v1/gtq7w6uzj647w?sheet=members")
+fetch("https://norm-of-the-server.onrender.com/api/1RmEm4aUEjW4ewi1vYQeY1qUcf3YPanxe6dZbAlRhwto/members")
   .then(res => res.json())
   .then(data => {
     for (let i = 0; i < data.length; i++) {
