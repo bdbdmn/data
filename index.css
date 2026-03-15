@@ -1,24 +1,47 @@
 .movie-grid {
     display: grid;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-self: center;
-    margin: 1rem;
+    max-width: 100%;
+    margin: 2rem;
 }
 
-#pre-chris-grid {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 45%;
+@media screen and (max-width: 1224px) {
+    #pre-chris-grid {grid-template-columns: repeat(2, 1fr);}
+    #post-chris-grid {grid-template-columns: repeat(2, 1fr);}
+    .header-desktop-txt {display: none;}
+    .header-mobile-txt {display: flex;}
 }
 
-#post-chris-grid {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 60%;
+@media screen and (min-width: 700px) and (max-width: 1224px) {
+    #post-chris-grid, #pre-chris-grid {margin: 0 12%;}
+}
+
+@media screen and (min-width: 1225px) {
+    #pre-chris-grid {grid-template-columns: repeat(3, 1fr);}
+    #post-chris-grid {grid-template-columns: repeat(4, 1fr);}
+    #post-chris-grid {margin: 0 12%;}
+    #pre-chris-grid {margin: 0 20%;}
+    .header-desktop-txt {display: flex;}
+    .header-mobile-txt {display: none;}
+}
+
+section {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 4vw;
     text-align: center;
-    margin: 2rem;
+    margin: calc(4*var(--std-gap)) 0 calc(2*var(--std-gap)) 0;
+    width: 100%;
+    font-family: "Chango";
+}
+
+a:has(.film-card) {
+    display: flex;
 }
 
 .film-card {
@@ -28,10 +51,17 @@ h2 {
     background-color: var(--ddsprple);
     color: var(--whte);
     justify-content: center;
+    width: auto;
+    transition: 0.3s ease;
+}
+
+.film-card:hover {
+    transform: translateY(-0.75rem);
+    box-shadow: 0px 0px 12px var(--whte);
 }
 
 .card-poster {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
     aspect-ratio: 150/225;
@@ -49,6 +79,7 @@ h2 {
 
 .date {
     font-weight: bold;
+    font-family: Arvo;
 }
 
 .choice-of {
@@ -79,6 +110,139 @@ h2 {
     color: var(--whte);
 }
 
-.statistics-container {
-    background-color: lightblue;
+.theater, .olivia {
+    background-color: var(--other);
+    color: var(--whte);
+}
+
+.bios-container {
+    width: 100%;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    min-height: 50vh;
+    font-family: "Chango";
+
+    .jacob {
+        img {
+            padding: 1rem;
+            max-width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+    }
+    .sam {
+        img {
+            padding: 1rem;
+            max-width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+    }
+    .brian {
+        img {
+            padding: 1rem;
+            max-width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+    }
+    .chris {
+        img {
+            padding: 1rem;
+            max-width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+    }
+
+    h3 {
+        width: 100%;
+        font-size: 2vw;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    hr {
+        height: 2px;
+        color: var(--blck);
+    }
+}
+
+#jacob-bio-stats, #sam-bio-stats, #brian-bio-stats, #chris-bio-stats {
+    display:grid;
+    grid-template-rows: 1fr 1fr 1.75fr 1.75fr;
+    .stats-text {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        backdrop-filter: blur(10px) brightness(75%);
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+    }
+    h4 {
+        font-size: 1.25vw;
+        text-align: center;
+        font-family: Arvo, serif;
+    }
+    p {
+        font-size: 7.5vw;
+        font-weight: bold;
+    }
+    #stats-title {
+        font-size: 2vw;
+        font-style: italic;
+        font-family: Chango, sans-serif;
+    }
+    div {
+        height: auto;
+        width: 100%;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: center;
+        align-items: space-around;
+    }
+}
+
+#statistics {
+    margin-top: 4rem;
+}
+
+.bio-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 25vw;
+}
+
+.bio-section:not(:has(#stats-title)) {
+    margin: 1rem 0;
+}
+
+#high-choice, #low-choice {
+    background-size:cover;
+    background-position:center center;
+    aspect-ratio: 2/3;
+}
+
+.graph-container {
+    display: none;
+    width: 100vw;
+    min-height: 50vh;
+    object-fit: cover;
+    margin-top: 12rem;
+    justify-content: center;
+}
+
+.graph-container iframe {
+    border: none;
+    height: 100% !important;
+    width: auto;
+    aspect-ratio: 600/371;
+    display:flex;
 }

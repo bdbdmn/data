@@ -6,9 +6,9 @@
 }
 
 :root {
-    --blck: hsl(276, 14%, 7%);
-    --whte: hsl(240, 20%, 99%);
-    --prple: hsl(270, 50%, 40%);
+    --blck: #120f14;
+    --whte: #fcfcfd;
+    --bdbdmnblue: hsl(218, 77%, 32%);
     --ddsprple: hsl(270, 30%, 15%);
     --ldsprple: hsl(270, 64%, 75%);
     --bl: hsl(199, 82%, 61%);
@@ -17,6 +17,10 @@
     --sam: #F5F5DC;
     --brian: #F4CB2A;
     --chris: #1E286E;
+    --lchris: rgb(100, 115, 230);
+    --other: #444444;
+
+    --std-gap: 1rem;
 
     --dblue: hsl(233, 57%, 17%);
 }
@@ -31,6 +35,33 @@ html::-webkit-scrollbar {
     display: none; /* Chrome and the rest */
 }
 
+@font-face {
+    font-family: "Chango";
+    src: url(Chango-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Arvo";
+    src: url(Arvo-Regular.ttf);
+}
+
+header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: calc(3*var(--std-gap));
+    z-index: 50;
+    background-color: var(--bdbdmnblue);
+    color: var(--whte);
+    font-weight: bold;
+    font-size: 2em;
+    height: 60px;
+}
+
 body {
     background-color: var(--blck);
     color: var(--whte);
@@ -38,19 +69,26 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--bl);
-    transition: 0.3s ease;
 }
 
-a:hover {
-    text-decoration: underline;
+footer a {
+    text-decoration: none;
+    color: var(--bl);
+    transition: 0.3s ease;
+    font-size: 5vw;
+}
+
+footer a:hover {
+    color: var(--brian);
 }
 
 footer {
-    background-color: var(--prple);
+    margin-top: 2rem;
+    background-color: var(--bdbdmnblue);
     color: var(--whte);
-    font-size: 2rem;
+    font-size: 3vw;
     padding: 4rem 0;
     text-align:center;
     font-weight: 800;
+    font-family: Chango;
 }
