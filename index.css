@@ -6,6 +6,31 @@
     margin: 2rem;
 }
 
+@media screen and (max-width: 699px) {
+    .bios-container {grid-template-areas:
+        "jacob sam"
+        "brian chris";
+    grid-template-columns: 1fr 1fr;}
+    .bio-section {max-width: 50vw;}
+    h3 {font-size: 6vw;}
+    h4 {font-size: 3.5vw;}
+    .bios-container p {font-size: 7.5vw;padding-bottom:0;}
+    .bios-container .five {font-size: 2.5vw;}
+    #stats-title {font-size: 4vw;}
+}
+
+@media screen and (min-width: 700px) {
+    .bios-container {grid-template-areas:
+        "jacob sam brian chris";
+    grid-template-columns: 1fr 1fr 1fr 1fr;}
+    .bio-section {max-width: 25vw;}
+    h3 {font-size: 2vw;}
+    h4 {font-size: 1.25vw;}
+    .bios-container p {font-size: 5vw;}
+    .bios-container .five {font-size: 2vw;}
+    #stats-title {font-size: 2vw;}
+}
+
 @media screen and (max-width: 1224px) {
     #pre-chris-grid {grid-template-columns: repeat(2, 1fr);}
     #post-chris-grid {grid-template-columns: repeat(2, 1fr);}
@@ -110,7 +135,7 @@ a:has(.film-card) {
     color: var(--whte);
 }
 
-.theater, .olivia {
+.theater, .olivia, .new {
     background-color: var(--other);
     color: var(--whte);
 }
@@ -119,7 +144,6 @@ a:has(.film-card) {
     width: 100%;
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     min-height: 50vh;
     font-family: "Chango";
 
@@ -162,20 +186,32 @@ a:has(.film-card) {
 
     h3 {
         width: 100%;
-        font-size: 2vw;
         text-align: center;
         padding-bottom: 1rem;
     }
+}
 
-    hr {
-        height: 2px;
-        color: var(--blck);
-    }
+#jacob-bio {
+    grid-area: jacob;
+}
+
+#sam-bio {
+    grid-area: sam;
+}
+
+#brian-bio {
+    grid-area: brian;
+}
+
+#chris-bio {
+    grid-area: chris;
 }
 
 #jacob-bio-stats, #sam-bio-stats, #brian-bio-stats, #chris-bio-stats {
-    display:grid;
-    grid-template-rows: 1fr 1fr 1.75fr 1.75fr;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     .stats-text {
         width: 100%;
         height: 100%;
@@ -186,16 +222,17 @@ a:has(.film-card) {
         font-weight: bold;
     }
     h4 {
-        font-size: 1.25vw;
         text-align: center;
         font-family: Arvo, serif;
     }
     p {
-        font-size: 7.5vw;
         font-weight: bold;
+        line-height: 1.5;
+    }
+    .five {
+        text-align: center;
     }
     #stats-title {
-        font-size: 2vw;
         font-style: italic;
         font-family: Chango, sans-serif;
     }
@@ -205,8 +242,12 @@ a:has(.film-card) {
         display:flex;
         flex-wrap:wrap;
         justify-content: center;
-        align-items: space-around;
     }
+}
+
+.score {
+    justify-content: center;
+    align-items:baseline;
 }
 
 #statistics {
@@ -217,7 +258,6 @@ a:has(.film-card) {
     align-items: center;
     display: flex;
     flex-direction: column;
-    max-width: 25vw;
 }
 
 .bio-section:not(:has(#stats-title)) {
@@ -228,6 +268,10 @@ a:has(.film-card) {
     background-size:cover;
     background-position:center center;
     aspect-ratio: 2/3;
+}
+
+#high-choice p, #high-choice h4, #low-choice p, #low-choice h4 {
+    text-shadow: 0 2px 4px var(--blck);
 }
 
 .graph-container {

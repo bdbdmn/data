@@ -17,21 +17,21 @@ fetch("https://sheetdb.io/api/v1/gtq7w6uzj647w?sheet=movies")
         textDiv.classList.add("card-text");
         if (data[i].movie_id == "NP") {
           poster.src = "nextNorm.webp";
-          date.textContent = "Next pick is from:";
+          date.textContent = "Next pick:";
           name.textContent = data[i].name;
         } else if (data[i].movie_id == "Null") {
           poster.src = "norm.webp";
           date.textContent = "Soon...from";
-          name.textContent = data[i].chosen_by;
+          name.textContent = data[i].name;
         } else {
           poster.src = data[i].poster_url;
           date.textContent = data[i].date_watched;
           name.textContent = data[i].name;
-          let lowerCaseName = name.textContent.toLowerCase();
-          name.classList.add(lowerCaseName);
           anchorTag.href = data[i].link;
           anchorTag.target = "_blank";
         }
+        let lowerCaseName = name.textContent.toLowerCase();
+        name.classList.add(lowerCaseName);
         textDiv.appendChild(date);
         textDiv.appendChild(name);
         filmCard.appendChild(poster);
@@ -76,22 +76,40 @@ fetch("https://sheetdb.io/api/v1/gtq7w6uzj647w?sheet=members")
       let givenAvg = document.createElement("p");
       let highAvg = document.createElement("p");
       let lowAvg = document.createElement("p");
+      let five = document.createElement("p");
+      five.classList.add("five");
+      five.textContent = "/5";
+      let scoreDiv = document.createElement("div");
+      scoreDiv.classList.add("score");
+      let choiceScore = scoreDiv;
+      let givenScore = scoreDiv.cloneNode(true);
+      let highScore = scoreDiv.cloneNode(true);
+      let lowScore = scoreDiv.cloneNode(true);
 
-      choiceAvg.textContent = data[i].choice_avg;
-      givenAvg.textContent = data[i].given_avg;
-      highAvg.textContent = data[i].high_choice_avg;
-      lowAvg.textContent = data[i].low_choice_avg;
+      choiceAvg.textContent = `${data[i].choice_avg}`;
+      givenAvg.textContent = `${data[i].given_avg}`;
+      highAvg.textContent = `${data[i].high_choice_avg}`;
+      lowAvg.textContent = `${data[i].low_choice_avg}`;
+
+      choiceScore.appendChild(choiceAvg);
+      choiceScore.appendChild(five);
+      givenScore.appendChild(givenAvg);
+      givenScore.appendChild(five.cloneNode(true));
+      highScore.appendChild(highAvg);
+      highScore.appendChild(five.cloneNode(true));
+      lowScore.appendChild(lowAvg);
+      lowScore.appendChild(five.cloneNode(true));
 
       let member = data[i].name.toLowerCase();
       let memberChildrenCollection = document.getElementById(`${member}-bio-stats`).children;
-      memberChildrenCollection[0].appendChild(choiceAvg);
-      memberChildrenCollection[1].appendChild(givenAvg);
+      memberChildrenCollection[0].appendChild(choiceScore);
+      memberChildrenCollection[1].appendChild(givenScore);
       memberChildrenCollection[2].style.backgroundImage = `url(${data[i].high_poster})`;
       memberChildrenCollection[2].children[0].querySelector("#stats-title").textContent = data[i].high_choice_title;
-      memberChildrenCollection[2].children[0].appendChild(highAvg);
+      memberChildrenCollection[2].children[0].appendChild(highScore);
       memberChildrenCollection[3].style.backgroundImage = `url(${data[i].low_poster})`;
       memberChildrenCollection[3].children[0].querySelector("#stats-title").textContent = data[i].low_choice_title;
-      memberChildrenCollection[3].children[0].appendChild(lowAvg);
+      memberChildrenCollection[3].children[0].appendChild(lowScore);
       if (member == "chris") {
         memberChildrenCollection[2].children[0].style.color = "var(--lchris)";
         memberChildrenCollection[3].children[0].style.color = "var(--lchris)";
