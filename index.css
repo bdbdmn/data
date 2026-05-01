@@ -158,7 +158,7 @@ a:has(.film-card) {
     .jacob {
         img {
             padding: 1rem;
-            max-width: 100%;
+            width: 100%;
             aspect-ratio: 1/1;
             object-fit: cover;
             border-radius: 100%;
@@ -167,7 +167,7 @@ a:has(.film-card) {
     .sam {
         img {
             padding: 1rem;
-            max-width: 100%;
+            width: 100%;
             aspect-ratio: 1/1;
             object-fit: cover;
             border-radius: 100%;
@@ -176,7 +176,7 @@ a:has(.film-card) {
     .brian {
         img {
             padding: 1rem;
-            max-width: 100%;
+            width: 100%;
             aspect-ratio: 1/1;
             object-fit: cover;
             border-radius: 100%;
@@ -185,7 +185,7 @@ a:has(.film-card) {
     .chris {
         img {
             padding: 1rem;
-            max-width: 100%;
+            width: 100%;
             aspect-ratio: 1/1;
             object-fit: cover;
             border-radius: 100%;
