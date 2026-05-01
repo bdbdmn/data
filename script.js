@@ -110,12 +110,7 @@ fetch("https://norm-of-the-server.onrender.com/api/1RmEm4aUEjW4ewi1vYQeY1qUcf3YP
       memberChildrenCollection[3].style.backgroundImage = `url(${data[i].low_poster})`;
       memberChildrenCollection[3].children[0].querySelector("#stats-title").textContent = data[i].low_choice_title;
       memberChildrenCollection[3].children[0].appendChild(lowScore);
-      if (member == "chris") {
-        memberChildrenCollection[2].children[0].style.color = "var(--lchris)";
-        memberChildrenCollection[3].children[0].style.color = "var(--lchris)";
-      } else {
-        memberChildrenCollection[2].children[0].style.color = `var(--${member})`;
-        memberChildrenCollection[3].children[0].style.color = `var(--${member})`;
-      }
+      memberChildrenCollection[2].children[0].style.color = `var(--${member})`;
+      memberChildrenCollection[3].children[0].style.color = `var(--${member})`;
     }
 })

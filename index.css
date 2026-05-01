@@ -6,11 +6,21 @@
     margin: 2rem;
 }
 
+@media screen and (max-width: 500px) {
+    #pre-chris-grid {grid-template-columns: repeat(1, minmax(0, 1fr));}
+    #post-chris-grid {grid-template-columns: repeat(1, minmax(0, 1fr));}
+}
+
+@media screen and (min-width: 501px) and (max-width: 1224px) {
+    #pre-chris-grid {grid-template-columns: repeat(2, minmax(0, 1fr));}
+    #post-chris-grid {grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+
 @media screen and (max-width: 699px) {
     .bios-container {grid-template-areas:
         "jacob sam"
         "brian chris";
-    grid-template-columns: 1fr 1fr;}
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);}
     .bio-section {max-width: 50vw;}
     h3 {font-size: 6vw;}
     h4 {font-size: 3.5vw;}
@@ -26,14 +36,12 @@
     .bio-section {max-width: 25vw;}
     h3 {font-size: 2vw;}
     h4 {font-size: 1.25vw;}
-    .bios-container p {font-size: 5vw;}
+    .bios-container p {font-size: 4vw;}
     .bios-container .five {font-size: 2vw;}
-    #stats-title {font-size: 2vw;}
+    #stats-title {font-size: 1.75vw;}
 }
 
 @media screen and (max-width: 1224px) {
-    #pre-chris-grid {grid-template-columns: repeat(2, 1fr);}
-    #post-chris-grid {grid-template-columns: repeat(2, 1fr);}
     .header-desktop-txt {display: none;}
     .header-mobile-txt {display: flex;}
 }
@@ -45,10 +53,11 @@
 @media screen and (min-width: 1225px) {
     #pre-chris-grid {grid-template-columns: repeat(3, 1fr);}
     #post-chris-grid {grid-template-columns: repeat(4, 1fr);}
-    #post-chris-grid {margin: 0 12%;}
-    #pre-chris-grid {margin: 0 20%;}
+    #post-chris-grid {margin: 0 9%;}
+    #pre-chris-grid {margin: 0 17.5%;}
     .header-desktop-txt {display: flex;}
     .header-mobile-txt {display: none;}
+    #statistics {margin: 0 6%;}
 }
 
 section {
@@ -132,7 +141,7 @@ a:has(.film-card) {
 
 .chris {
     background-color: var(--chris);
-    color: var(--whte);
+    color: var(--blck);
 }
 
 .theater, .olivia, .new {
@@ -144,7 +153,6 @@ a:has(.film-card) {
     width: 100%;
     margin: 0;
     display: grid;
-    min-height: 50vh;
     font-family: "Chango";
 
     .jacob {
@@ -235,6 +243,7 @@ a:has(.film-card) {
     #stats-title {
         font-style: italic;
         font-family: Chango, sans-serif;
+        padding:0.25rem 0;
     }
     div {
         height: auto;
