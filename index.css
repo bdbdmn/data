@@ -7,8 +7,18 @@
 }
 
 @media screen and (max-width: 500px) {
-    #pre-chris-grid {grid-template-columns: repeat(1, minmax(0, 1fr));}
-    #post-chris-grid {grid-template-columns: repeat(1, minmax(0, 1fr));}
+    #pre-chris-grid {grid-template-columns: repeat(2, minmax(0, 1fr));}
+    #post-chris-grid {grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+
+@media screen and (max-width: 699px) {
+    #pre-chris-grid p {font-size: 3vw;}
+    #post-chris-grid p {font-size: 3vw;}
+}
+
+@media screen and (min-width: 700px) {
+    #pre-chris-grid p {font-size: max(16px, 1vw);}
+    #post-chris-grid p {font-size: max(16px, 1vw);}
 }
 
 @media screen and (min-width: 501px) and (max-width: 1224px) {
@@ -22,11 +32,15 @@
         "brian chris";
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);}
     .bio-section {max-width: 50vw;}
+    h2 {font-size: 7vw;}
     h3 {font-size: 6vw;}
     h4 {font-size: 3.5vw;}
     .bios-container p {font-size: 7.5vw;padding-bottom:0;}
     .bios-container .five {font-size: 2.5vw;}
     #stats-title {font-size: 4vw;}
+    .film-card {padding: 0.5rem;}
+    .card-text {padding: 8px 0 0 0;}
+    .choice-of {padding: 4px 8px;border: 4px solid var(--blck);}
 }
 
 @media screen and (min-width: 700px) {
@@ -34,11 +48,15 @@
         "jacob sam brian chris";
     grid-template-columns: 1fr 1fr 1fr 1fr;}
     .bio-section {max-width: 25vw;}
+    h2 {font-size: 4vw;}
     h3 {font-size: 2vw;}
     h4 {font-size: 1.25vw;}
     .bios-container p {font-size: 4vw;}
     .bios-container .five {font-size: 2vw;}
     #stats-title {font-size: 1.75vw;}
+    .film-card {padding: 1rem;}
+    .card-text {padding: 16px 0 0 0;}
+    .choice-of {padding: 8px 16px;box-shadow: 0 6px 0 var(--blck);border: 6px solid var(--blck);}
 }
 
 @media screen and (max-width: 1224px) {
@@ -47,7 +65,7 @@
 }
 
 @media screen and (min-width: 700px) and (max-width: 1224px) {
-    #post-chris-grid, #pre-chris-grid {margin: 0 12%;}
+    #post-chris-grid, #pre-chris-grid {margin: 0 8%;}
 }
 
 @media screen and (min-width: 1225px) {
@@ -67,7 +85,6 @@ section {
 }
 
 h2 {
-    font-size: 4vw;
     text-align: center;
     margin: calc(4*var(--std-gap)) 0 calc(2*var(--std-gap)) 0;
     width: 100%;
@@ -81,7 +98,6 @@ a:has(.film-card) {
 .film-card {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
     background-color: var(--ddsprple);
     color: var(--whte);
     justify-content: center;
@@ -107,7 +123,6 @@ a:has(.film-card) {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 16px 0 0 0;
     height: auto;
 }
 
@@ -117,10 +132,7 @@ a:has(.film-card) {
 }
 
 .choice-of {
-    border-radius: 10px;
-    padding: 8px 16px;
-    border: 4px solid var(--blck);
-    box-shadow: 0 6px 0 var(--blck);
+    border-radius: 12px;
     font-weight: bold;
 }
 
