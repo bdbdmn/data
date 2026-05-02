@@ -57,13 +57,12 @@ header {
     text-align: center;
     justify-content: center;
     align-items: center;
-    padding: calc(3*var(--std-gap));
+    padding: 1.25rem;
     z-index: 50;
     background-color: var(--bdbdmnblue);
     color: var(--whte);
     font-weight: bold;
     font-size: 2em;
-    height: 60px;
 }
 
 body {
