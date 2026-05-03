@@ -126,6 +126,19 @@ a:has(.film-card) {
     height: auto;
 }
 
+.top-card-text {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 0 16px 0;
+    font-family:chango;
+}
+
+.avg-film-score {
+    color: gold;
+    text-shadow: 0 3px 1px var(--blck);
+}
+
 .date {
     font-weight: bold;
     font-family: Arvo;
