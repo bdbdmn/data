@@ -10,7 +10,7 @@
     --whte: #fcfcfd;
     --darkbdbdmn: hsl(218, 55%, 20%);
     --bdbdmnblue: hsl(218, 77%, 32%);
-    --bdbdmngradient: linear-gradient(to bottom, var(--bdbdmnblue), hsl(218, 77%, 32%, 75%));
+    --bdbdmngradient: linear-gradient(to bottom, var(--bdbdmnblue), hsl(218, 77%, 32%, 50%));
     --ddsprple: hsl(270, 10%, 15%);
     --ldsprple: hsl(270, 64%, 75%);
     --bl: hsl(199, 82%, 61%);

@@ -1,3 +1,11 @@
+html {
+    background-color: var(--bdbdmnblue);
+}
+
+body {
+    background-color: var(--blck);
+}
+
 .movie-grid {
     display: grid;
     gap: 1.5rem;
@@ -20,14 +28,13 @@
 
 @media screen and (min-width: 700px) {
     #pre-chris-grid p {font-size: max(16px, 0.5vw);}
-    #pre-chris-grid .avg-film-score {font-size:1.75vw;}
     #post-chris-grid p {font-size: max(16px, 0.5vw);}
-    #post-chris-grid .avg-film-score {font-size:1.75vw;}
+    
 }
 
 @media screen and (min-width: 501px) and (max-width: 1224px) {
-    #pre-chris-grid {grid-template-columns: repeat(3, minmax(0, 1fr));}
-    #post-chris-grid {grid-template-columns: repeat(3, minmax(0, 1fr));}
+    #pre-chris-grid {grid-template-columns: repeat(2, minmax(0, 1fr));}
+    #post-chris-grid {grid-template-columns: repeat(2, minmax(0, 1fr));}
 }
 
 @media screen and (max-width: 699px) {
@@ -57,7 +64,7 @@
     h4 {font-size: 1.25vw;}
     .bios-container p {font-size: 4vw;}
     .bios-container .five {font-size: 2vw;}
-    #stats-title {font-size: 1.75vw;}
+    #stats-title {font-size: 1.5vw;}
     .film-card {/* padding: 1rem; */}
     .card-text {padding: 12px;}
     .choice-of {padding: 8px 16px;/* box-shadow: 0 4px 0 var(--blck); *//* border: 4px solid var(--blck); */}
@@ -70,16 +77,20 @@
 
 @media screen and (min-width: 700px) and (max-width: 1224px) {
     #post-chris-grid, #pre-chris-grid {margin: 0 8%;}
+    #post-chris-grid .avg-film-score {font-size:3vw;}
+    #pre-chris-grid .avg-film-score {font-size:3vw;}
 }
 
 @media screen and (min-width: 1225px) {
     #pre-chris-grid {grid-template-columns: repeat(3, 1fr);}
     #post-chris-grid {grid-template-columns: repeat(4, 1fr);}
-    #post-chris-grid {margin: 0 20%;}
-    #pre-chris-grid {margin: 0 27.5%;}
+    #post-chris-grid {margin: 0 18%;}
+    #pre-chris-grid {margin: 0 24.8%;}
     .header-desktop-txt {display: flex;}
     .header-mobile-txt {display: none;}
-    #statistics {margin: 0 6%;}
+    #statistics {margin: 0 12%;}
+    #post-chris-grid .avg-film-score {font-size:1.75vw;}
+    #pre-chris-grid .avg-film-score {font-size:1.75vw;}
 }
 
 section {
