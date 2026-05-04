@@ -8,8 +8,10 @@
 :root {
     --blck: hsl(276, 10%, 4%);
     --whte: #fcfcfd;
+    --darkbdbdmn: hsl(218, 55%, 20%);
     --bdbdmnblue: hsl(218, 77%, 32%);
-    --ddsprple: hsl(270, 15%, 15%);
+    --bdbdmngradient: linear-gradient(to bottom, var(--bdbdmnblue), hsl(218, 77%, 32%, 75%));
+    --ddsprple: hsl(270, 10%, 15%);
     --ldsprple: hsl(270, 64%, 75%);
     --bl: hsl(199, 82%, 61%);
 
@@ -22,7 +24,7 @@
     --sam: hsl(31, 94%, 64%);
     --brian: hsl(45, 100%, 65%);
     --chris: hsl(101, 43%, 58%);
-    --other: #444444;
+    --other: #b8b8b8;
 
     --std-gap: 1rem;
 
@@ -59,7 +61,8 @@ header {
     align-items: center;
     padding: 1.25rem;
     z-index: 50;
-    background-color: var(--bdbdmnblue);
+    background: var(--bdbdmngradient);
+    backdrop-filter: blur(5px);
     color: var(--whte);
     font-weight: bold;
     font-size: 2em;
@@ -78,7 +81,7 @@ footer a {
     text-decoration: none;
     color: var(--bl);
     transition: 0.3s ease;
-    font-size: 4vw;
+    font-size: min(6vw, 48px);
 }
 
 footer a:hover {
@@ -89,7 +92,7 @@ footer {
     margin-top: 2rem;
     background-color: var(--bdbdmnblue);
     color: var(--whte);
-    font-size: 2vw;
+    font-size: min(3.5vw, 32px);
     padding: 2rem 0;
     text-align:center;
     font-weight: 800;

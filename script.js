@@ -3,7 +3,7 @@ fetch("https://norm-of-the-server.onrender.com/api/1RmEm4aUEjW4ewi1vYQeY1qUcf3YP
   .then(data => {
     const preChrisGrid = document.getElementById("pre-chris-grid");
     const postChrisGrid = document.getElementById("post-chris-grid");
-    for (let i = data.length - 1; i > 71; i--) {
+    for (let i = data.length - 1; i > 68; i--) {
         let filmCard = document.createElement("div");
         let poster = document.createElement("img");
         let date = document.createElement("p");
@@ -20,13 +20,16 @@ fetch("https://norm-of-the-server.onrender.com/api/1RmEm4aUEjW4ewi1vYQeY1qUcf3YP
         textDiv.classList.add("card-text");
         topTextDiv.classList.add("top-card-text");
         filmScore.classList.add("avg-film-score");
+        filmScore.style.color = "var(--" + data[i].name.toLowerCase() + ")";
         if (data[i].movie_id == "NP") {
           poster.src = "nextNorm.webp";
-          date.textContent = "Next pick:";
+          date.textContent = "Coming next...";
           choiceOf.textContent = data[i].name;
+          filmNum.textContent = "#" + (parseInt(data[i-1].movie_id) + 1);
+          filmScore.textContent = "TBD";
         } else if (data[i].movie_id == "Null") {
           poster.src = "norm.webp";
-          date.textContent = "Soon...from";
+          date.textContent = "Soon...";
           choiceOf.textContent = data[i].name;
         } else {
           poster.src = data[i].poster_url;
@@ -38,9 +41,9 @@ fetch("https://norm-of-the-server.onrender.com/api/1RmEm4aUEjW4ewi1vYQeY1qUcf3YP
           filmScore.textContent = data[i].average_rating;
         }
         topTextDiv.appendChild(filmNum);
-        topTextDiv.appendChild(filmScore);
-        textDiv.appendChild(date);
+        topTextDiv.appendChild(date);
         textDiv.appendChild(choiceOf);
+        textDiv.appendChild(filmScore);
         filmCard.appendChild(topTextDiv);
         filmCard.appendChild(poster);
         filmCard.appendChild(textDiv);
@@ -49,7 +52,7 @@ fetch("https://norm-of-the-server.onrender.com/api/1RmEm4aUEjW4ewi1vYQeY1qUcf3YP
         let lowerCaseName = choiceOf.textContent.toLowerCase();
         choiceOf.classList.add(lowerCaseName);
     }
-    for (let i = 71; i > -1; i--) {
+    for (let i = 68; i > -1; i--) {
         let filmCard = document.createElement("div");
         let poster = document.createElement("img");
         let date = document.createElement("p");
@@ -67,6 +70,7 @@ fetch("https://norm-of-the-server.onrender.com/api/1RmEm4aUEjW4ewi1vYQeY1qUcf3YP
         textDiv.classList.add("card-text");
         topTextDiv.classList.add("top-card-text");
         filmScore.classList.add("avg-film-score");
+        filmScore.style.color = "var(--" + data[i].name.toLowerCase() + ")";
 
         poster.src = data[i].poster_url;
         date.textContent = data[i].date_watched;
@@ -77,9 +81,9 @@ fetch("https://norm-of-the-server.onrender.com/api/1RmEm4aUEjW4ewi1vYQeY1qUcf3YP
         filmScore.textContent = data[i].average_rating;
 
         topTextDiv.appendChild(filmNum);
-        topTextDiv.appendChild(filmScore);
-        textDiv.appendChild(date);
+        topTextDiv.appendChild(date);
         textDiv.appendChild(choiceOf);
+        textDiv.appendChild(filmScore);
         filmCard.appendChild(topTextDiv);
         filmCard.appendChild(poster);
         filmCard.appendChild(textDiv);

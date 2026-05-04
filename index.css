@@ -3,7 +3,7 @@
     gap: 1.5rem;
     justify-self: center;
     max-width: 100%;
-    margin: 2rem;
+    margin: 1rem;
 }
 
 @media screen and (max-width: 500px) {
@@ -12,18 +12,22 @@
 }
 
 @media screen and (max-width: 699px) {
-    #pre-chris-grid p {font-size: 3vw;}
-    #post-chris-grid p {font-size: 3vw;}
+    #pre-chris-grid p {font-size: 2.5vw;}
+    #pre-chris-grid .avg-film-score {font-size:5vw;}
+    #post-chris-grid p {font-size: 2.5vw;}
+    #post-chris-grid .avg-film-score {font-size:5vw;}
 }
 
 @media screen and (min-width: 700px) {
-    #pre-chris-grid p {font-size: max(16px, 1vw);}
-    #post-chris-grid p {font-size: max(16px, 1vw);}
+    #pre-chris-grid p {font-size: max(16px, 0.5vw);}
+    #pre-chris-grid .avg-film-score {font-size:1.75vw;}
+    #post-chris-grid p {font-size: max(16px, 0.5vw);}
+    #post-chris-grid .avg-film-score {font-size:1.75vw;}
 }
 
 @media screen and (min-width: 501px) and (max-width: 1224px) {
-    #pre-chris-grid {grid-template-columns: repeat(2, minmax(0, 1fr));}
-    #post-chris-grid {grid-template-columns: repeat(2, minmax(0, 1fr));}
+    #pre-chris-grid {grid-template-columns: repeat(3, minmax(0, 1fr));}
+    #post-chris-grid {grid-template-columns: repeat(3, minmax(0, 1fr));}
 }
 
 @media screen and (max-width: 699px) {
@@ -38,9 +42,9 @@
     .bios-container p {font-size: 7.5vw;padding-bottom:0;}
     .bios-container .five {font-size: 2.5vw;}
     #stats-title {font-size: 4vw;}
-    .film-card {padding: 0.5rem;}
-    .card-text {padding: 8px 0 0 0;}
-    .choice-of {padding: 4px 8px;border: 4px solid var(--blck);}
+    .film-card {/* padding: 0.5rem; */}
+    .card-text {padding: 8px;}
+    .choice-of {padding: 4px 8px;}
 }
 
 @media screen and (min-width: 700px) {
@@ -54,9 +58,9 @@
     .bios-container p {font-size: 4vw;}
     .bios-container .five {font-size: 2vw;}
     #stats-title {font-size: 1.75vw;}
-    .film-card {padding: 1rem;}
-    .card-text {padding: 16px 0 0 0;}
-    .choice-of {padding: 8px 16px;box-shadow: 0 6px 0 var(--blck);border: 6px solid var(--blck);}
+    .film-card {/* padding: 1rem; */}
+    .card-text {padding: 12px;}
+    .choice-of {padding: 8px 16px;/* box-shadow: 0 4px 0 var(--blck); *//* border: 4px solid var(--blck); */}
 }
 
 @media screen and (max-width: 1224px) {
@@ -71,8 +75,8 @@
 @media screen and (min-width: 1225px) {
     #pre-chris-grid {grid-template-columns: repeat(3, 1fr);}
     #post-chris-grid {grid-template-columns: repeat(4, 1fr);}
-    #post-chris-grid {margin: 0 9%;}
-    #pre-chris-grid {margin: 0 17.5%;}
+    #post-chris-grid {margin: 0 20%;}
+    #pre-chris-grid {margin: 0 27.5%;}
     .header-desktop-txt {display: flex;}
     .header-mobile-txt {display: none;}
     #statistics {margin: 0 6%;}
@@ -98,22 +102,22 @@ a:has(.film-card) {
 .film-card {
     display: flex;
     flex-direction: column;
-    background-color: var(--ddsprple);
+    /* background-color: var(--ddsprple); */
     color: var(--whte);
     justify-content: center;
     width: auto;
     transition: 0.3s ease;
+    font-family: Arvo;
 }
 
 .film-card:hover {
     transform: translateY(-0.75rem);
-    box-shadow: 0px 0px 12px var(--whte);
+    /* box-shadow: 0px 0px 8px 10px var(--whte); */
 }
 
 .card-poster {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
     aspect-ratio: 150/225;
 }
 
@@ -124,29 +128,36 @@ a:has(.film-card) {
     align-items: center;
     width: 100%;
     height: auto;
+    background: var(--darkbdbdmn);
+    border-radius: 0 0 10px 10px;
 }
 
 .top-card-text {
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 0 16px 0;
-    font-family:chango;
+    padding: 8px;
+    background: var(--darkbdbdmn);
+    border-radius: 10px 10px 0 0;
+    font-family: 'Arvo';
+    font-weight: bold;
 }
 
 .avg-film-score {
-    color: gold;
-    text-shadow: 0 3px 1px var(--blck);
+    font-family: Chango;
+    text-shadow: 
+    0px 4px 2px var(--blck);
 }
 
 .date {
-    font-weight: bold;
-    font-family: Arvo;
+    font-family: 'Arvo';
 }
 
 .choice-of {
     border-radius: 12px;
     font-weight: bold;
+    box-shadow: 
+    0px 4px 2px var(--blck);
 }
 
 .jacob {
@@ -169,9 +180,9 @@ a:has(.film-card) {
     color: var(--blck);
 }
 
-.theater, .olivia, .new {
+.theater, .olivia, .new, .jake {
     background-color: var(--other);
-    color: var(--whte);
+    color: var(--blck);
 }
 
 .bios-container {
